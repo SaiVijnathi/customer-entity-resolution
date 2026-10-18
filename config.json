@@ -1,0 +1,5 @@
+{
+    "input_file": "input.csv",
+    "column_number": 2,
+    "output_file": "output.csv"
+}
