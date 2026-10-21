@@ -1,6 +1,6 @@
 import json   #read configuration
-import pandas as pd #read input csv file
-import re
+import pandas as pd   #read input csv file
+import   #removes spaces and punctuations from text
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import faiss
@@ -40,86 +40,86 @@ print("\nFirst 10 customer names:")
 print(customer_names.head(10))
 
 
-def normalize_name(name):
-    #convert into string and lowercase
-    name = str(name).lower().strip()
+# def normalize_name(name):
+#     #convert into string and lowercase
+#     name = str(name).lower().strip()
 
-    #remove punctuation
-    name = re.sub(r'[^\w\s]', "", name)
+#     #remove punctuation
+#     name = re.sub(r'[^\w\s]', "", name)
 
-    # Remove common business suffixes
-    suffixes = [
-        "private limited",
-        "pvt ltd",
-        "pvt",
-        "limited",
-        "ltd",
-        "llc",
-        "incorporated",
-        "inc"
-    ]
+#     # Remove common business suffixes
+#     suffixes = [
+#         "private limited",
+#         "pvt ltd",
+#         "pvt",
+#         "limited",
+#         "ltd",
+#         "llc",
+#         "incorporated",
+#         "inc"
+#     ]
 
-    for suffix in suffixes:
-        name = re.sub(rf"\b{re.escape(suffix)}\b", "", name)
+#     for suffix in suffixes:
+#         name = re.sub(rf"\b{re.escape(suffix)}\b", "", name)
 
-    # Remove extra whitespace
-    name = re.sub(r"\s+", " ", name).strip()
+#     # Remove extra whitespace
+#     name = re.sub(r"\s+", " ", name).strip()
 
-    return name
-
-
-
-def compare_names(name1, name2):
-    score = fuzz.ratio(name1, name2)
-    return score
-
-
-# Create normalized names
-df["normalized_name"] = customer_names.apply(normalize_name)
-
-
-print("\nOriginal vs normalized:")
-print(df[[df.columns[column_index], "normalized_name"]].head(15))
-
-
-# Generate embeddings
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
-embeddings = model.encode(
-    df["normalized_name"].tolist(),
-    normalize_embeddings=True
-)
-
-embeddings = np.array(embeddings, dtype="float32")
-
-print("\nEmbedding shape:", embeddings)
+#     return name
 
 
 
-# Build FAISS similarity search index
-dimension = embeddings.shape[1]
-
-index = faiss.IndexHNSWFlat(
-    dimension,
-    32,
-    faiss.METRIC_INNER_PRODUCT
-)
-
-index.hnsw.efSearch = 50
-
-index.add(embeddings)
-
-print("Number of vectors in index:", index.ntotal)
+# def compare_names(name1, name2):
+#     score = fuzz.ratio(name1, name2)
+#     return score
 
 
-# Find similar customer names
-k = 30
+# # Create normalized names
+# df["normalized_name"] = customer_names.apply(normalize_name)
 
-similarity_scores, similar_indices = index.search(embeddings, k)
 
-print("\nSimilar customers for first record:")
+# print("\nOriginal vs normalized:")
+# print(df[[df.columns[column_index], "normalized_name"]].head(15))
 
-for rank in range(k):
+
+# # Generate embeddings
+# model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# embeddings = model.encode(
+#     df["normalized_name"].tolist(),
+#     normalize_embeddings=True
+# )
+
+# embeddings = np.array(embeddings, dtype="float32")
+
+# print("\nEmbedding shape:", embeddings)
+
+
+
+# # Build FAISS similarity search index
+# dimension = embeddings.shape[1]
+
+# index = faiss.IndexHNSWFlat(
+#     dimension,
+#     32,
+#     faiss.METRIC_INNER_PRODUCT
+# )
+
+# index.hnsw.efSearch = 50
+
+# index.add(embeddings)
+
+# print("Number of vectors in index:", index.ntotal)
+
+
+# # Find similar customer names
+# k = 30
+
+# similarity_scores, similar_indices = index.search(embeddings, k)
+
+# print("\nSimilar customers for first record:")
+
+# for rank in range(k):
     idx = similar_indices[1][rank]
 
     print(
