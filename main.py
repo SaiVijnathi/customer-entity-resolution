@@ -40,32 +40,39 @@ print("\nFirst 10 customer names:")
 print(customer_names.head(10))
 
 
-# def normalize_name(name):0
-#     #convert into string and lowercase
-#     name = str(name).lower().strip()
+def normalize_name(name):
+    # print("in the normalize_name function", name)
+    #convert into string and lowercase
+    name = str(name).lower().strip()
 
-#     #remove punctuation
-#     name = re.sub(r'[^\w\s]', "", name)
+    #remove punctuation
+    name = re.sub(r'[^\w\s]', " ", name)
 
-#     # Remove common business suffixes
-#     suffixes = [
-#         "private limited",
-#         "pvt ltd",
-#         "pvt",
-#         "limited",
-#         "ltd",
-#         "llc",
-#         "incorporated",
-#         "inc"
-#     ]
+    # Remove common business suffixes
+    suffixes = [
+        "private limited",
+        "pvt ltd",
+        "pvt",
+        "limited",
+        "ltd",
+        "llc",
+        "incorporated",
+        "inc"
+    ]
 
-#     for suffix in suffixes:
-#         name = re.sub(rf"\b{re.escape(suffix)}\b", "", name)
+    for suffix in suffixes:
+        name = re.sub(rf"\b{re.escape(suffix)}\b", "", name)
 
-#     # Remove extra whitespace
-#     name = re.sub(r"\s+", " ", name).strip()
+    # Remove extra whitespace
+    name = re.sub(r"\s+", " ", name).strip()
 
-#     return name
+    return name
+
+
+
+# Create normalized names
+df["normalized_name"] = customer_names.apply(normalize_name)
+print(df)
 
 
 
@@ -74,25 +81,22 @@ print(customer_names.head(10))
 #     return score
 
 
-# # Create normalized names
-# df["normalized_name"] = customer_names.apply(normalize_name)
-
 
 # print("\nOriginal vs normalized:")
 # print(df[[df.columns[column_index], "normalized_name"]].head(15))
 
 
-# # Generate embeddings
-# model = SentenceTransformer("all-MiniLM-L6-v2")
+# Generate embeddings
+model = SentenceTransformer("all-MiniLM-L6-v2")  #loads model into model
 
-# embeddings = model.encode(
-#     df["normalized_name"].tolist(),
-#     normalize_embeddings=True
-# )
+embeddings = model.encode(
+    df["normalized_name"].tolist(),
+    normalize_embeddings=True
+)
 
-# embeddings = np.array(embeddings, dtype="float32")
+embeddings = np.array(embeddings, dtype="float32")
 
-# print("\nEmbedding shape:", embeddings)
+print("\nEmbedding shape:", embeddings.shape)
 
 
 
