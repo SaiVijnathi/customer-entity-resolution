@@ -120,11 +120,11 @@ print(customer_names.head(10))
 # print("\nSimilar customers for first record:")
 
 # for rank in range(k):
-    idx = similar_indices[1][rank]
+    # idx = similar_indices[1][rank]
 
-    print(
-        rank + 1,
-        df.iloc[idx][df.columns[column_index]],
-        "-> score:",
-        similarity_scores[1][rank]
-    )
+    # print(
+    #     rank + 1,
+    #     df.iloc[idx][df.columns[column_index]],
+    #     "-> score:",
+    #     similarity_scores[1][rank]
+    # )
