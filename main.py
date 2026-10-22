@@ -1,6 +1,6 @@
 import json   #read configuration
 import pandas as pd   #read input csv file
-import   #removes spaces and punctuations from text
+import re  #removes spaces and punctuations from text
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import faiss
@@ -40,7 +40,7 @@ print("\nFirst 10 customer names:")
 print(customer_names.head(10))
 
 
-# def normalize_name(name):
+# def normalize_name(name):0
 #     #convert into string and lowercase
 #     name = str(name).lower().strip()
 
