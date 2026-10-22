@@ -39,7 +39,7 @@ print("Number of records:", len(df))
 print("\nFirst 10 customer names:")
 print(customer_names.head(10))
 
-
+#function to create normalized names
 def normalize_name(name):
     # print("in the normalize_name function", name)
     #convert into string and lowercase
@@ -100,35 +100,35 @@ print("\nEmbedding shape:", embeddings.shape)
 
 
 
-# # Build FAISS similarity search index
-# dimension = embeddings.shape[1]
+# Build FAISS similarity search index
+dimension = embeddings.shape[1]  #384
 
-# index = faiss.IndexHNSWFlat(
-#     dimension,
-#     32,
-#     faiss.METRIC_INNER_PRODUCT
-# )
+index = faiss.IndexHNSWFlat(     #creates a FAISS index for approximate nearest neighbor search using HNSW (Hierarchical Navigable Small World) algorithm. It is efficient for high-dimensional data.
+    dimension,
+    32,
+    faiss.METRIC_INNER_PRODUCT
+)
 
-# index.hnsw.efSearch = 50
+index.hnsw.efSearch = 50
 
-# index.add(embeddings)
+index.add(embeddings)
 
-# print("Number of vectors in index:", index.ntotal)
+print("Number of vectors in index:", index.ntotal)
 
 
-# # Find similar customer names
-# k = 30
+# Find similar customer names
+k = 10  #number of similar records to retrieve
 
-# similarity_scores, similar_indices = index.search(embeddings, k)
+similarity_scores, similar_indices = index.search(embeddings, k)
 
-# print("\nSimilar customers for first record:")
+print("\nSimilar customers for first record:")
 
-# for rank in range(k):
-    # idx = similar_indices[1][rank]
+for rank in range(k):
+    idx = similar_indices[1][rank]
 
-    # print(
-    #     rank + 1,
-    #     df.iloc[idx][df.columns[column_index]],
-    #     "-> score:",
-    #     similarity_scores[1][rank]
-    # )
+    print(
+        rank + 1,
+        df.iloc[idx][df.columns[column_index]],
+        "-> score:",
+        similarity_scores[1][rank]
+    )
