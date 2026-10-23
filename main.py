@@ -15,7 +15,7 @@ print(config["input_file"])
 
 #get config values
 input_file = config['input_file']
-column_number = config['column_number']
+column_number = int(config['column_number'])
 output_file = config['output_file']
 
 #read input csv file
@@ -88,15 +88,28 @@ df["normalized_name"] = customer_names.apply(normalize_name)
 print(df.head(20))
 
 
+def generate_acronym(name):
+    if not name:
+        return ""
 
-# def compare_names(name1, name2):
-#     score = fuzz.ratio(name1, name2)
-#     return score
+    words = name.split()
+    if len(words) == 1: 
+        return words[0]
+    
+    return "".join(word[0] for word in words)
+
+df["acronym"] = df["normalized_name"].apply(generate_acronym)
 
 
-
-# print("\nOriginal vs normalized:")
-# print(df[[df.columns[column_index], "normalized_name"]].head(15))
+print(
+    df[
+        [
+            df.columns[column_index],
+            "normalized_name",
+            "acronym"
+        ]
+    ].head(20)
+)
 
 
 # Generate embeddings
@@ -133,14 +146,91 @@ k = min(10, len(valid_df))    #number of similar records to retrieve
 
 similarity_scores, similar_indices = index.search(embeddings, k)
 
-print("\nSimilar customers for second record:")
+# Store all candidate pairs
+matches = []
+seen_pairs = set()
 
-for rank in range(1, k):
-    idx = similar_indices[0][rank]
+# Loop through every customer
+for query_idx in range(len(valid_df)):
 
-    print(
-        rank,
-        valid_df.iloc[idx][df.columns[column_index]],
-        "-> score:",
-        similarity_scores[0][rank]
-    )
+    query_row = valid_df.iloc[query_idx]
+
+    query_name = query_row["normalized_name"]
+    query_acronym = query_row["acronym"]
+    query_original = query_row[df.columns[column_index]]
+
+    # Get this customer's nearest neighbors
+    for rank in range(k):
+
+        idx = int(similar_indices[query_idx][rank])
+
+        # Skip invalid results and the customer itself
+        if idx < 0 or idx == query_idx:
+            continue
+
+        # Avoid storing the same pair twice
+        pair_key = tuple(sorted((query_idx, idx)))
+
+        if pair_key in seen_pairs:
+            continue
+
+        seen_pairs.add(pair_key)
+
+        candidate_row = valid_df.iloc[idx]
+
+        candidate_name = candidate_row["normalized_name"]
+        candidate_acronym = candidate_row["acronym"]
+        candidate_original = candidate_row[
+            df.columns[column_index]
+        ]
+
+        # Calculate scores
+        embedding_score = float(
+            similarity_scores[query_idx][rank]
+        )
+
+        fuzzy_score = fuzz.ratio(
+            query_name,
+            candidate_name
+        )
+
+        acronym_match = (
+            query_acronym == candidate_acronym
+            and query_acronym != ""
+        )
+
+        # Experimental score; validate before relying on it
+        final_score = (
+            embedding_score * 100 * 0.5
+            + fuzzy_score * 0.4
+            + (100 if acronym_match else 0) * 0.1
+        )
+
+        if final_score >= 90:
+            decision = "HIGH_CONFIDENCE"
+        elif final_score >= 70:
+            decision = "UNCERTAIN"
+        else:
+            decision = "LOW_CONFIDENCE"
+
+        # Save the results
+        matches.append({
+            "customer_1": query_original,
+            "customer_2": candidate_original,
+            "embedding_score": round(embedding_score, 4),
+            "fuzzy_score": fuzzy_score,
+            "acronym_match": acronym_match,
+            "final_score": round(final_score, 2),
+            "decision": decision
+        })
+
+# Create the evidence table
+match_df = pd.DataFrame(matches)
+
+print("\nCandidate match results:")
+print(match_df.head(20))
+
+print("\nTotal candidate pairs:", len(match_df))
+
+# Save to a separate file for inspection
+match_df.to_csv("candidate_matches.csv", index=False)
