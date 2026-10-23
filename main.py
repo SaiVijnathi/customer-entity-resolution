@@ -2,7 +2,7 @@ import json   #read configuration
 import pandas as pd   #read input csv file
 import re  #removes spaces and punctuations from text
 from sentence_transformers import SentenceTransformer
-import numpy as np
+# import numpy as np
 import faiss
 from rapidfuzz import fuzz
 
@@ -41,9 +41,14 @@ print(customer_names.head(10))
 
 #function to create normalized names
 def normalize_name(name):
-    # print("in the normalize_name function", name)
     #convert into string and lowercase
     name = str(name).lower().strip()
+
+    #handling missing data
+    if name in {"", "na", "n/a", "null", "none", "nan"}:
+        return ""
+
+    name = name.replace("&", " and ")
 
     #remove punctuation
     name = re.sub(r'[^\w\s]', " ", name)
@@ -57,8 +62,16 @@ def normalize_name(name):
         "ltd",
         "llc",
         "incorporated",
-        "inc"
-    ]
+        "inc",
+        "corporation",
+        "corp",
+        "company",
+        "co"
+]
+
+
+    # Remove longer suffixes before shorter ones
+    suffixes = sorted(suffixes, key=len, reverse=True)
 
     for suffix in suffixes:
         name = re.sub(rf"\b{re.escape(suffix)}\b", "", name)
@@ -72,7 +85,7 @@ def normalize_name(name):
 
 # Create normalized names
 df["normalized_name"] = customer_names.apply(normalize_name)
-print(df)
+print(df.head(20))
 
 
 
@@ -89,27 +102,26 @@ print(df)
 # Generate embeddings
 model = SentenceTransformer("all-MiniLM-L6-v2")  #loads model into model
 
-embeddings = model.encode(
-    df["normalized_name"].tolist(),
-    normalize_embeddings=True
-)
+valid_mask = df["normalized_name"].ne("")
+valid_df = df.loc[valid_mask].copy().reset_index(drop=False)
 
-embeddings = np.array(embeddings, dtype="float32")
+if valid_df.empty:
+    raise ValueError("No valid customer names found")
+
+embeddings = model.encode(
+    valid_df["normalized_name"].tolist(),
+    normalize_embeddings=True
+).astype("float32")
+
+# embeddings = np.array(embeddings, dtype="float32")
 
 print("\nEmbedding shape:", embeddings.shape)
-
 
 
 # Build FAISS similarity search index
 dimension = embeddings.shape[1]  #384
 
-index = faiss.IndexHNSWFlat(     #creates a FAISS index for approximate nearest neighbor search using HNSW (Hierarchical Navigable Small World) algorithm. It is efficient for high-dimensional data.
-    dimension,
-    32,
-    faiss.METRIC_INNER_PRODUCT
-)
-
-index.hnsw.efSearch = 50
+index = faiss.IndexFlatIP(dimension)
 
 index.add(embeddings)
 
@@ -117,18 +129,18 @@ print("Number of vectors in index:", index.ntotal)
 
 
 # Find similar customer names
-k = 10  #number of similar records to retrieve
+k = min(10, len(valid_df))    #number of similar records to retrieve
 
 similarity_scores, similar_indices = index.search(embeddings, k)
 
-print("\nSimilar customers for first record:")
+print("\nSimilar customers for second record:")
 
-for rank in range(k):
-    idx = similar_indices[1][rank]
+for rank in range(1, k):
+    idx = similar_indices[0][rank]
 
     print(
-        rank + 1,
-        df.iloc[idx][df.columns[column_index]],
+        rank,
+        valid_df.iloc[idx][df.columns[column_index]],
         "-> score:",
-        similarity_scores[1][rank]
+        similarity_scores[0][rank]
     )
