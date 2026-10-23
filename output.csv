@@ -1,0 +1,301 @@
+index,customerID,customerName,normalized_name,acronym,group_id
+0,1,Cinder Grove Foods Ltd,cinder grove foods,cgf,1
+1,2,ember line electric llc,ember line electric,ele,2
+2,3,Blue Harbor Inc,blue harbor,bh,3
+3,4,river nooks hospitality inc,river nooks hospitality,rnh,4
+4,5,heliomint biotech ltd,heliomint biotech,hb,5
+5,6,VCT (Velvet Comet),vct velvet comet,vvc,6
+6,7,"BLUE HARBOR ANALYTICS, LLC.",blue harbor analytics,bha,7
+7,8,Noth Star Quilt House LLC,noth star quilt house,nsqh,8
+8,9,Umber Whale LLC,umber whale,uw,9
+9,10,"DELTA FINCH CONSULTING, LTD.",delta finch consulting,dfc,10
+10,11,"NORTH STAR QUILT HOUSE, LTD.",north star quilt house,nsqh,8
+11,12,Opal Ridge Mobility Ltd,opal ridge mobility,orm,11
+12,13,delta finch consulting inc,delta finch consulting,dfc,10
+13,14,Quartz Spar Systems Inc,quartz spar systems,qss,12
+14,15,"UMBER WHALE MARINE, INC.",umber whale marine,uwm,13
+15,16,Lumen Badger Software Pvt Ltd,lumen badger software,lbs,14
+16,17,Opal Ridges Ltd,opal ridges,or,15
+17,18,Kestrel Blooms Flristry Inc,kestrel blooms flristry,kbf,16
+18,19,granite kite construction pvt ltd,granite kite construction,gkc,17
+19,20,Blue Harbour Logisics LLC,blue harbour logisics,bhl,18
+20,21,Xenon Meadow Inc,xenon meadow,xm,19
+21,22,Mosaic Otter LLC,mosaic otter,mo,20
+22,23,ELE (Ember Line),ele ember line,eel,21
+23,24,foxglove design studio inc,foxglove design studio,fds,22
+24,25,River Nooks Hospitality LLC,river nooks hospitality,rnh,4
+25,26,"HELIOMINT BIOTECH, LLC.",heliomint biotech,hb,5
+26,27,Quartz Spar Ltd,quartz spar,qs,23
+27,28,ACS (Asteron Cloud),acs asteron cloud,aac,24
+28,29,kestrel bloom textiles pvt ltd,kestrel bloom textiles,kbt,25
+29,30,"OPAL RIDGES MOTORS, PVT LTD.",opal ridges motors,orm,26
+30,31,Silver Acorn Interiors Ltd,silver acorn interiors,sai,27
+31,32,blue harbour logistics inc,blue harbour logistics,bhl,28
+32,33,Granite Kite Construction Ltd,granite kite construction,gkc,17
+33,34,Opal Ridge LLC,opal ridge,or,15
+34,35,Cinder Grove Farms Inc,cinder grove farms,cgf,29
+35,36,quartz spar systems llc,quartz spar systems,qss,12
+36,37,"GRANITE KITES MEDIA, PVT LTD.",granite kites media,gkm,30
+37,38,Prairie Pixels Imaging LLC,prairie pixels imaging,ppi,31
+38,39,Lumen Badge Security LLC,lumen badge security,lbs,32
+39,40,asteron cloud services llc,asteron cloud services,acs,33
+40,41,ACS (Asteron Cloud),acs asteron cloud,aac,24
+41,42,Tangelo Forge Manufacturing Pvt Ltd,tangelo forge manufacturing,tfm,34
+42,43,Yellow Cedar LLC,yellow cedar,yc,35
+43,44,HelioMint Inc,heliomint,heliomint,36
+44,45,Ciner Grove Farms Inc,ciner grove farms,cgf,37
+45,46,Blue Harbour Pvt Ltd,blue harbour,bh,3
+46,47,Lumen Badger Inc,lumen badger,lb,38
+47,48,Fxglove Design Studio LLC,fxglove design studio,fds,39
+48,49,Yelow Cider Events Inc,yelow cider events,yce,40
+49,50,Emberline Energy Ltd,emberline energy,ee,41
+50,51,Umber Whale Marine Ltd,umber whale marine,uwm,13
+51,52,"MOSAIC OTTER RETAIL, INC.",mosaic otter retail,mor,42
+52,53,Cinder Grove Ltd,cinder grove,cg,43
+53,54,Juniper Arch Insurance LLC,juniper arch insurance,jai,44
+54,55,"FOXGLOVE DESIGN STUDIO, LTD.",foxglove design studio,fds,22
+55,56,Pririe Pixel Games Pvt Ltd,pririe pixel games,ppg,45
+56,57,EE (Emberline),ee emberline,ee,46
+57,58,Mosaic Water Trding Inc,mosaic water trding,mwt,47
+58,59,Blue Harbour Logistics LLC,blue harbour logistics,bhl,28
+59,60,"IVORY CIRCUITS RESEARCH, PVT LTD.",ivory circuits research,icr,48
+60,61,"VELVET COMET TRAVEL, LLC.",velvet comet travel,vct,49
+61,62,LBS (Lumen Badger),lbs lumen badger,llb,50
+62,63,Northstar Quill Publishing Pvt Ltd,northstar quill publishing,nqp,51
+63,64,Embrline Energy Ltd,embrline energy,ee,52
+64,65,tangelo forge manufacturing ltd,tangelo forge manufacturing,tfm,34
+65,66,"TANGELO FORGES TOOLS, LTD.",tangelo forges tools,tft,53
+66,67,"VELVET COMMIT SOFTWARE, LTD.",velvet commit software,vcs,54
+67,68,Tangelo Forge Manufacuring Pvt Ltd,tangelo forge manufacuring,tfm,34
+68,69,Kestrel Bloom Textles Ltd,kestrel bloom textles,kbt,55
+69,70,River Nooks Pvt Ltd,river nooks,rn,56
+70,71,River Nook Bverages Pvt Ltd,river nook bverages,rnb,57
+71,72,Prairie Pixel Inc,prairie pixel,pp,58
+72,73,willow bight shipping llc,willow bight shipping,wbs,59
+73,74,KBT (Kestrel Bloom),kbt kestrel bloom,kkb,60
+74,75,Asteron Cloud Ltd,asteron cloud,ac,61
+75,76,GKC (Granite Kite),gkc granite kite,ggk,62
+76,77,Silver Corn Agritech Inc,silver corn agritech,sca,63
+77,78,Delta Finch Inc,delta finch,df,64
+78,79,Helio Mint Wellness LLC,helio mint wellness,hmw,65
+79,80,DFC (Delta Finch),dfc delta finch,ddf,66
+80,81,ivory circuits research llc,ivory circuits research,icr,48
+81,82,UVM (Umber Vale),uvm umber vale,uuv,67
+82,83,Xenon Meadws Pharma LLC,xenon meadws pharma,xmp,68
+83,84,"YELLOW CEDAR EDUCATION, INC.",yellow cedar education,yce,69
+84,85,yellow cider events llc,yellow cider events,yce,70
+85,86,"ASTERON CLOUD SERVICES, PVT LTD.",asteron cloud services,acs,33
+86,87,Granie Kites Media Inc,granie kites media,gkm,71
+87,88,Yellow Cedar Education Ltd,yellow cedar education,yce,69
+88,89,juniper arc finance ltd,juniper arc finance,jaf,72
+89,90,Granite Kites Ltd,granite kites,gk,73
+90,91,SAI (Silver Acorn),sai silver acorn,ssa,74
+91,92,ICR (Ivory Circuits),icr ivory circuits,iic,75
+92,93,Mosaic Water Trading Inc,mosaic water trading,mwt,76
+93,94,Xenon Meadows Pharma LLC,xenon meadows pharma,xmp,77
+94,95,foxglove digital works ltd,foxglove digital works,fdw,78
+95,96,QST (Quartz Sparrow),qst quartz sparrow,qqs,79
+96,97,umber vale mining llc,umber vale mining,uvm,80
+97,98,JAI (Juniper Arch),jai juniper arch,jja,81
+98,99,"OPAL RIDGE MOBILITY, INC.",opal ridge mobility,orm,11
+99,100,FDS (Foxglove Design),fds foxglove design,ffd,82
+100,101,Quartz Spar Systes Inc,quartz spar systes,qss,12
+101,102,Juniper Arch Pvt Ltd,juniper arch,ja,83
+102,103,Kestrel Bloom LLC,kestrel bloom,kb,84
+103,104,umber whale marine pvt ltd,umber whale marine,uwm,13
+104,105,HB (HelioMint),hb heliomint,hh,85
+105,106,juniper arch insurance inc,juniper arch insurance,jai,44
+106,107,Yellow Cider Events Inc,yellow cider events,yce,70
+107,108,Cider Grove Foods Ltd,cider grove foods,cgf,86
+108,109,JAF (Juniper Arc),jaf juniper arc,jja,87
+109,110,"XENON MEADOW HEALTH, LLC.",xenon meadow health,xmh,88
+110,111,Foxglove Design Studio LLC,foxglove design studio,fds,22
+111,112,Lumen Badge Pvt Ltd,lumen badge,lb,89
+112,113,Tangelo Forges Pvt Ltd,tangelo forges,tf,90
+113,114,quartz sparrow telecom pvt ltd,quartz sparrow telecom,qst,91
+114,115,Asteron Cloud Services Inc,asteron cloud services,acs,33
+115,116,PPI (Prairie Pixels),ppi prairie pixels,ppp,92
+116,117,"GRANITE KITE CONSTRUCTION, INC.",granite kite construction,gkc,17
+117,118,Northstar Quill Publshing Pvt Ltd,northstar quill publshing,nqp,93
+118,119,Delta Finch Robotics Pvt Ltd,delta finch robotics,dfr,94
+119,120,"EMBER LINE ELECTRIC, PVT LTD.",ember line electric,ele,2
+120,121,velvet comet travel ltd,velvet comet travel,vct,49
+121,122,"CINDER GROVE FARMS, PVT LTD.",cinder grove farms,cgf,29
+122,123,delta finch robotics ltd,delta finch robotics,dfr,94
+123,124,silver acorn interiors pvt ltd,silver acorn interiors,sai,27
+124,125,Velvt Comet Travel Pvt Ltd,velvt comet travel,vct,95
+125,126,Moaic Otter Retail Ltd,moaic otter retail,mor,96
+126,127,"SILVER ACORN INTERIORS, INC.",silver acorn interiors,sai,27
+127,128,Kestrel Blooms Floristry Inc,kestrel blooms floristry,kbf,16
+128,129,Willow Byte LLC,willow byte,wb,97
+129,130,TFM (Tangelo Forge),tfm tangelo forge,ttf,98
+130,131,"ASTERON CLOUD SYSTEMS, INC.",asteron cloud systems,acs,99
+131,132,RNB (River Nook),rnb river nook,rrn,100
+132,133,"BLUE HARBOUR LOGISTICS, LTD.",blue harbour logistics,bhl,28
+133,134,Cinder Grove LLC,cinder grove,cg,43
+134,135,Umber Vale Minng Inc,umber vale minng,uvm,101
+135,136,"RIVER NOOK BEVERAGES, LLC.",river nook beverages,rnb,102
+136,137,"NORTHSTAR QUILL PUBLISHING, LLC.",northstar quill publishing,nqp,51
+137,138,"KESTREL BLOOMS FLORISTRY, PVT LTD.",kestrel blooms floristry,kbf,16
+138,139,Asteron Cloud LLC,asteron cloud,ac,61
+139,140,Helio Mint Wellnss LLC,helio mint wellnss,hmw,103
+140,141,"JUNIPER ARCH INSURANCE, LTD.",juniper arch insurance,jai,44
+141,142,FDW (Foxglove Digital),fdw foxglove digital,ffd,104
+142,143,prairie pixels imaging inc,prairie pixels imaging,ppi,31
+143,144,North Star Quilt Pvt Ltd,north star quilt,nsq,105
+144,145,Foxglove Digital Inc,foxglove digital,fd,106
+145,146,Delta Finch Pvt Ltd,delta finch,df,64
+146,147,Lumen Badge Scurity LLC,lumen badge scurity,lbs,32
+147,148,NSQH (North Star Quilt),nsqh north star quilt,nnsq,107
+148,149,GKM (Granite Kites),gkm granite kites,ggk,62
+149,150,Ember Line Ltd,ember line,el,108
+150,151,northstar quill publishing ltd,northstar quill publishing,nqp,51
+151,152,Delta Finch Consulting LLC,delta finch consulting,dfc,10
+152,153,"JUNIPER ARC FINANCE, LLC.",juniper arc finance,jaf,72
+153,154,"TANGELO FORGE MANUFACTURING, LLC.",tangelo forge manufacturing,tfm,34
+154,155,"MOSAIC WATER TRADING, PVT LTD.",mosaic water trading,mwt,76
+155,156,Mosaic Otter Retail Ltd,mosaic otter retail,mor,42
+156,157,kestrel blooms floristry llc,kestrel blooms floristry,kbf,16
+157,158,Tangelo Forge Inc,tangelo forge,tf,90
+158,159,River Nook Beverages Pvt Ltd,river nook beverages,rnb,102
+159,160,ORM (Opal Ridges),orm opal ridges,oor,109
+160,161,"SILVER CORN AGRITECH, PVT LTD.",silver corn agritech,sca,63
+161,162,Velvet Commit Software LLC,velvet commit software,vcs,54
+162,163,Kestrel Blooms Ltd,kestrel blooms,kb,84
+163,164,Ivory Crcuits Research Inc,ivory crcuits research,icr,110
+164,165,Aseron Cloud Systems Ltd,aseron cloud systems,acs,111
+165,166,xenon meadows pharma inc,xenon meadows pharma,xmp,77
+166,167,TFT (Tangelo Forges),tft tangelo forges,ttf,98
+167,168,"YELLOW CIDER EVENTS, PVT LTD.",yellow cider events,yce,70
+168,169,Mosaic Water Ltd,mosaic water,mw,112
+169,170,lumen badger software ltd,lumen badger software,lbs,14
+170,171,Kestrel Bloom Textiles Ltd,kestrel bloom textiles,kbt,25
+171,172,LBS (Lumen Badge),lbs lumen badge,llb,113
+172,173,Ivory Circuit LLC,ivory circuit,ic,114
+173,174,willow byte networks pvt ltd,willow byte networks,wbn,115
+174,175,PPG (Prairie Pixel),ppg prairie pixel,ppp,116
+175,176,cinder grove foods pvt ltd,cinder grove foods,cgf,1
+176,177,Granite Kite LLC,granite kite,gk,73
+177,178,"QUARTZ SPARROW TELECOM, INC.",quartz sparrow telecom,qst,91
+178,179,"CINDER GROVE FOODS, INC.",cinder grove foods,cgf,1
+179,180,Prarie Pixels Imaging LLC,prarie pixels imaging,ppi,117
+180,181,Opal Ridge Mobiliy Ltd,opal ridge mobiliy,orm,11
+181,182,Quartz Sparrow LLC,quartz sparrow,qs,118
+182,183,"PRAIRIE PIXEL GAMES, LLC.",prairie pixel games,ppg,119
+183,184,tangelo forges tools inc,tangelo forges tools,tft,53
+184,185,CGF (Cinder Grove),cgf cinder grove,ccg,120
+185,186,Yellow Cedar Eucation Ltd,yellow cedar eucation,yce,121
+186,187,Quartz Sparow Telecom Ltd,quartz sparow telecom,qst,122
+187,188,Silver Corn Ltd,silver corn,sc,123
+188,189,VCS (Velvet Commit),vcs velvet commit,vvc,124
+189,190,UWM (Umber Whale),uwm umber whale,uuw,125
+190,191,"KESTREL BLOOM TEXTILES, INC.",kestrel bloom textiles,kbt,25
+191,192,"XENON MEADOWS PHARMA, LTD.",xenon meadows pharma,xmp,77
+192,193,xenon meadow health ltd,xenon meadow health,xmh,88
+193,194,"LUMEN BADGE SECURITY, LTD.",lumen badge security,lbs,32
+194,195,YCE (Yellow Cider),yce yellow cider,yyc,126
+195,196,"FOXGLOVE DIGITAL WORKS, LLC.",foxglove digital works,fdw,78
+196,197,blue harbor analytics ltd,blue harbor analytics,bha,7
+197,198,Ivory Ciruit Labs Ltd,ivory ciruit labs,icl,127
+198,199,Quartz Sparrow Telecom Ltd,quartz sparrow telecom,qst,91
+199,200,Foxglove Digital Works Pvt Ltd,foxglove digital works,fdw,78
+200,201,Emberline LLC,emberline,emberline,128
+201,202,asteron cloud systems pvt ltd,asteron cloud systems,acs,99
+202,203,Juniper Arc Inc,juniper arc,ja,129
+203,204,cinder grove farms llc,cinder grove farms,cgf,29
+204,205,NQP (Northstar Quill),nqp northstar quill,nnq,130
+205,206,ICL (Ivory Circuit),icl ivory circuit,iic,131
+206,207,Velvet Commit Sofware LLC,velvet commit sofware,vcs,132
+207,208,Velvet Comet Travel Pvt Ltd,velvet comet travel,vct,49
+208,209,granite kites media llc,granite kites media,gkm,30
+209,210,Silver Acorn Intriors Ltd,silver acorn intriors,sai,133
+210,211,BHL (Blue Harbour),bhl blue harbour,bbh,134
+211,212,Umber Whale Maine Ltd,umber whale maine,uwm,13
+212,213,Blue Harbor Analytics Pvt Ltd,blue harbor analytics,bha,7
+213,214,CGF (Cinder Grove),cgf cinder grove,ccg,120
+214,215,Lumen Badger Softwae Pvt Ltd,lumen badger softwae,lbs,135
+215,216,mosaic otter retail pvt ltd,mosaic otter retail,mor,42
+216,217,Opal Rides Motors Inc,opal rides motors,orm,136
+217,218,velvet commit software inc,velvet commit software,vcs,54
+218,219,Xenon Meadows Pvt Ltd,xenon meadows,xm,19
+219,220,Umber Vale Ltd,umber vale,uv,137
+220,221,River Nook Inc,river nook,rn,56
+221,222,"WILLOW BIGHT SHIPPING, PVT LTD.",willow bight shipping,wbs,59
+222,223,YCE (Yellow Cedar),yce yellow cedar,yyc,138
+223,224,BHA (Blue Harbor),bha blue harbor,bbh,139
+224,225,lumen badge security inc,lumen badge security,lbs,32
+225,226,Helio Mint Pvt Ltd,helio mint,hm,140
+226,227,XMP (Xenon Meadows),xmp xenon meadows,xxm,141
+227,228,Ivory Circuits Research Inc,ivory circuits research,icr,48
+228,229,Willow Bight Shipping Inc,willow bight shipping,wbs,59
+229,230,WBN (Willow Byte),wbn willow byte,wwb,142
+230,231,yellow cedar education pvt ltd,yellow cedar education,yce,69
+231,232,Velvet Commit Pvt Ltd,velvet commit,vc,143
+232,233,"WILLOW BYTE NETWORKS, INC.",willow byte networks,wbn,115
+233,234,Foxgloe Digital Works Pvt Ltd,foxgloe digital works,fdw,78
+234,235,Tangelo Forges Tools LLC,tangelo forges tools,tft,53
+235,236,Prairie Pixels Pvt Ltd,prairie pixels,pp,58
+236,237,HMW (Helio Mint),hmw helio mint,hhm,144
+237,238,"QUARTZ SPAR SYSTEMS, PVT LTD.",quartz spar systems,qss,12
+238,239,prairie pixel games ltd,prairie pixel games,ppg,119
+239,240,opal ridges motors llc,opal ridges motors,orm,26
+240,241,Willow Byte Networks Ltd,willow byte networks,wbn,115
+241,242,Velvet Comet Inc,velvet comet,vc,145
+242,243,KBF (Kestrel Blooms),kbf kestrel blooms,kkb,146
+243,244,mosaic water trading llc,mosaic water trading,mwt,76
+244,245,RNH (River Nooks),rnh river nooks,rrn,100
+245,246,emberline energy pvt ltd,emberline energy,ee,41
+246,247,DFR (Delta Finch),dfr delta finch,ddf,66
+247,248,"UMBER VALE MINING, PVT LTD.",umber vale mining,uvm,80
+248,249,Blue Harbor Analtics Pvt Ltd,blue harbor analtics,bha,147
+249,250,Prairie Pixel Games Pvt Ltd,prairie pixel games,ppg,119
+250,251,HeioMint Biotech Pvt Ltd,heiomint biotech,hb,148
+251,252,MOR (Mosaic Otter),mor mosaic otter,mmo,149
+252,253,SCA (Silver Corn),sca silver corn,ssc,150
+253,254,helio mint wellness inc,helio mint wellness,hmw,65
+254,255,silver corn agritech llc,silver corn agritech,sca,63
+255,256,Delta Finch Cnsulting LLC,delta finch cnsulting,dfc,151
+256,257,Willow Bight Shippng Inc,willow bight shippng,wbs,152
+257,258,Yellow Cider Ltd,yellow cider,yc,153
+258,259,Umber Vale Mining Inc,umber vale mining,uvm,80
+259,260,River Nooks Hspitality LLC,river nooks hspitality,rnh,154
+260,261,Silver Corn Agrtech Inc,silver corn agrtech,sca,63
+261,262,Delta Finch Rootics Pvt Ltd,delta finch rootics,dfr,155
+262,263,Ivory Circuit Labs Ltd,ivory circuit labs,icl,156
+263,264,Ember Line Electric Inc,ember line electric,ele,2
+264,265,Xenon Meadw Health Pvt Ltd,xenon meadw health,xmh,157
+265,266,Willow Byte Netwrks Ltd,willow byte netwrks,wbn,115
+266,267,Granite Kites Media Inc,granite kites media,gkm,30
+267,268,Asteron Cloud Serices Inc,asteron cloud serices,acs,33
+268,269,Tngelo Forges Tools LLC,tngelo forges tools,tft,158
+269,270,opal ridge mobility pvt ltd,opal ridge mobility,orm,11
+270,271,XMH (Xenon Meadow),xmh xenon meadow,xxm,159
+271,272,"PRAIRIE PIXELS IMAGING, LTD.",prairie pixels imaging,ppi,31
+272,273,"HELIO MINT WELLNESS, LTD.",helio mint wellness,hmw,65
+273,274,north star quilt house inc,north star quilt house,nsqh,8
+274,275,Juniper Arc Finance Pvt Ltd,juniper arc finance,jaf,72
+275,276,North Star Quilt House LLC,north star quilt house,nsqh,8
+276,277,Foxglove Design Pvt Ltd,foxglove design,fd,160
+277,278,Opal Ridges Motors Inc,opal ridges motors,orm,26
+278,279,Ivory Circuits Ltd,ivory circuits,ic,114
+279,280,"LUMEN BADGER SOFTWARE, LLC.",lumen badger software,lbs,14
+280,281,Asteron Cloud Systems Ltd,asteron cloud systems,acs,99
+281,282,"RIVER NOOKS HOSPITALITY, LTD.",river nooks hospitality,rnh,4
+282,283,Granite Kite Consruction Ltd,granite kite consruction,gkc,17
+283,284,ORM (Opal Ridge),orm opal ridge,oor,109
+284,285,"EMBERLINE ENERGY, INC.",emberline energy,ee,41
+285,286,Juniper Arch Insurane LLC,juniper arch insurane,jai,161
+286,287,Silver Acorn LLC,silver acorn,sa,162
+287,288,Junipr Arc Finance Pvt Ltd,junipr arc finance,jaf,163
+288,289,Northstar Quill Inc,northstar quill,nq,164
+289,290,Willow Bight Ltd,willow bight,wb,165
+290,291,river nook beverages ltd,river nook beverages,rnb,102
+291,292,"DELTA FINCH ROBOTICS, LLC.",delta finch robotics,dfr,94
+292,293,Xenon Meadow Health Pvt Ltd,xenon meadow health,xmh,88
+293,294,QSS (Quartz Spar),qss quartz spar,qqs,166
+294,295,WBS (Willow Bight),wbs willow bight,wwb,167
+295,296,Ember Line Electic Inc,ember line electic,ele,2
+296,297,ivory circuit labs pvt ltd,ivory circuit labs,icl,156
+297,298,HelioMint Biotech Pvt Ltd,heliomint biotech,hb,5
+298,299,MWT (Mosaic Water),mwt mosaic water,mmw,168
+299,300,"IVORY CIRCUIT LABS, INC.",ivory circuit labs,icl,156

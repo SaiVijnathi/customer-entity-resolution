@@ -117,6 +117,8 @@ model = SentenceTransformer("all-MiniLM-L6-v2")  #loads model into model
 
 valid_mask = df["normalized_name"].ne("")
 valid_df = df.loc[valid_mask].copy().reset_index(drop=False)
+valid_df = valid_df.reset_index(drop=True)
+
 
 if valid_df.empty:
     raise ValueError("No valid customer names found")
@@ -215,14 +217,22 @@ for query_idx in range(len(valid_df)):
 
         # Save the results
         matches.append({
+            "query_idx": query_idx,
+            "candidate_idx": idx,
+
             "customer_1": query_original,
             "customer_2": candidate_original,
+
             "embedding_score": round(embedding_score, 4),
             "fuzzy_score": fuzzy_score,
+
             "acronym_match": acronym_match,
+
             "final_score": round(final_score, 2),
+
             "decision": decision
         })
+
 
 # Create the evidence table
 match_df = pd.DataFrame(matches)
@@ -234,3 +244,58 @@ print("\nTotal candidate pairs:", len(match_df))
 
 # Save to a separate file for inspection
 match_df.to_csv("candidate_matches.csv", index=False)
+
+
+
+# Grouping using Union-Find
+
+class UnionFind:
+
+    def __init__(self, n):
+        self.parent = list(range(n))
+
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union(self, a, b):
+        root_a = self.find(a)
+        root_b = self.find(b)
+
+        if root_a != root_b:
+            self.parent[root_b] = root_a
+
+
+uf = UnionFind(len(valid_df))
+
+# Connect high-confidence pairs
+for _, row in match_df.iterrows():
+    if row["decision"] == "HIGH_CONFIDENCE":
+        uf.union(
+            int(row["query_idx"]),
+            int(row["candidate_idx"])
+        )
+
+# Assign one group ID to each connected component
+root_to_group = {}
+group_ids = []
+
+for idx in range(len(valid_df)):
+    root = uf.find(idx)
+
+    if root not in root_to_group:
+        root_to_group[root] = len(root_to_group) + 1
+
+    group_ids.append(root_to_group[root])
+
+# Preserve all original columns for valid records
+group_df = valid_df.copy()
+group_df["group_id"] = group_ids
+
+# Save grouped records
+group_df.to_csv(output_file, index=False)
+
+print(f"\nGrouped customers saved to {output_file}")
+print("Number of valid records:", len(group_df))
+print("Number of groups:", group_df["group_id"].nunique())
